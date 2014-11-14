@@ -14,6 +14,8 @@ var lastResult = null;
 
 Meteor.methods({
     message: function(text, callback) {
+        if (this.isSimulation) return;
+
         if (lastResult && lastResult.type == 'movie' && /what time\?/i.test(text)) {
 
             Meteor.call('pushNotify', {
@@ -34,6 +36,24 @@ Meteor.methods({
                     url: 'https://www.google.com/maps/?q=' + location
                 }
             });
+        } else if (/^(?:(?:ht|f)tp(?:s?)\:\/\/|~\/|\/)?(?:\w+:\w+@)?((?:(?:[-\w\d{1-3}]+\.)+(?:com|org|net|gov|mil|biz|info|mobi|name|aero|jobs|edu|co\.uk|ac\.uk|it|fr|tv|museum|asia|local|travel|[a-z]{2}))|((\b25[0-5]\b|\b[2][0-4][0-9]\b|\b[0-1]?[0-9]?[0-9]\b)(\.(\b25[0-5]\b|\b[2][0-4][0-9]\b|\b[0-1]?[0-9]?[0-9]\b)){3}))(?::[\d]{1,5})?(?:(?:(?:\/(?:[-\w~!$+|.,=]|%[a-f\d]{2})+)+|\/)+|\?|#)?(?:(?:\?(?:[-\w~!$+|.,*:]|%[a-f\d{2}])+=?(?:[-\w~!$+|.,*:=]|%[a-f\d]{2})*)(?:&(?:[-\w~!$+|.,*:]|%[a-f\d{2}])+=?(?:[-\w~!$+|.,*:=]|%[a-f\d]{2})*)*)*(?:#(?:[-\w~!$ |\/.,*:;=]|%[a-f\d]{2})*)?$/i.test(text)) {
+            var url = text;
+
+            HTTP.get('http://iframe.ly/api/iframely', {
+                params: {
+                    url: url,
+                    api_key: '369136f6100570fcf4ef0f'
+                }
+            }, function(error, response) {
+                if (response.data) {
+                    Meteor.call('pushNotify', {
+                        type: 'embed',
+                        title: (response.data.meta && response.data.meta.title) ? response.data.meta.title : "",
+                        payload: response.data
+                    });
+                }
+            });
+
         } else {
 
             Meteor.call('newTextEntry', {
@@ -80,7 +100,20 @@ Meteor.methods({
                     }
                 }
 
+                if (d.type == 'person') {
+                    payload = {
+                        type: 'person',
+                        title: d.title,
+                        payload: JSON.stringify(d)
+                    }
+                }
+
                 lastResult = d;
+
+                if (d.rank < 0.15) {
+                    console.log('Score is too low');
+                    return;
+                }
 
                 Meteor.call('pushNotify', payload);
             });
@@ -90,7 +123,7 @@ Meteor.methods({
         var key = Tokens.findOne('registration_id').value;
         check(key, String);
 
-        console.log(payload);
+        console.log(payload.title);
         HTTP.post('https://android.googleapis.com/gcm/send', {
             data: {
                 registration_ids: [key],
@@ -101,7 +134,7 @@ Meteor.methods({
                 'Authorization': 'key=AIzaSyDrGlzlQFtqZCxxX3XrhYVNtybKs3ch-Lo'
             }
         }, function(error, response) {
-            console.log(error, response);
+
         });
     }
 });

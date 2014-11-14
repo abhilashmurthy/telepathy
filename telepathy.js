@@ -259,9 +259,10 @@ if (Meteor.isClient) {
     $(document).on('click', '.postTextEntry', function() {
         if (activeSessionIsNotSet()) return;
 
-        var message = prompt('message');
-        log("Posting the textentry '" + message + "'.");
-        Meteor.call('message', message);
+        bootbox.prompt('message', function(message) {
+            log("Posting the textentry '" + message + "'.");
+            Meteor.call('message', message);
+        });
     });
 
     // STEP 6:

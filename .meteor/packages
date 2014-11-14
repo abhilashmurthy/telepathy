@@ -9,4 +9,5 @@ insecure
 service-configuration
 http
 mizzao:bootstrap-3
+mizzao:bootboxjs
 

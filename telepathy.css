@@ -24,6 +24,10 @@ table td {
 .label {
     color: black;
 }
+.log-container .label {
+    color: #00ff00;
+}
+
 .logentry {
     padding: 4px;
 }
@@ -32,7 +36,8 @@ table td {
     background-color: black;
     border: 1px dashed #ffffff;
 }
-#log, #json {
+
+.log-container {
     font-family: Monaco, monospace;
     font-size: 11px;
     color: white;
@@ -51,7 +56,7 @@ table td {
     width: 450px;
 }
 #json {
-    height: 550px;
+    height: 588px;
     width: 450px;
 }
 .error {
