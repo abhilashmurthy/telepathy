@@ -1,1 +1,59 @@
 /* CSS declarations go here */
+
+body {
+    font-family: "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+}
+table td {
+    vertical-align: top;
+    padding: 8px;
+}
+
+.btn {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.btn:hover {
+    cursor: pointer;
+    color: blue;
+}
+.btnarea {
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+.label {
+    color: black;
+}
+.logentry {
+    padding: 4px;
+}
+#controls {
+    color: white;
+    background-color: black;
+    border: 1px dashed #ffffff;
+}
+#log, #json {
+    font-family: Monaco, monospace;
+    font-size: 11px;
+    color: white;
+    padding: 4px;
+    background-color: black;
+    border: 1px dashed #ffffff;
+    vertical-align: top;
+    overflow: scroll;
+}
+#json >pre {
+    color: white;
+    background-color: black;
+}
+#log {
+    height: 550px;
+    width: 450px;
+}
+#json {
+    height: 550px;
+    width: 450px;
+}
+.error {
+    color: red;
+}

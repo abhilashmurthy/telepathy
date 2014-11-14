@@ -6,3 +6,7 @@
 meteor-platform
 autopublish
 insecure
+service-configuration
+http
+mizzao:bootstrap-3
+

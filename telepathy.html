@@ -1,14 +1,96 @@
 <head>
-  <title>telepathy</title>
+    <title>Telepathy</title>
 </head>
 
 <body>
-  <h1>Welcome to Meteor!</h1>
+    <table width="100%">
+        <tr>
+            <td class='controlPanel'>
+                <div class='btnarea'>
+                    <span class='label'>Appid:</span>
+                    <span id="appid"></span>
+                </div>
+                <div class='btnarea'>
+                    <span class='label'>Appsecret:</span>
+                    <span id="appsecret"></span>
+                </div>
+                <div>
+                    <span class='label'>Device ID:</span>
+                    <input type="text" placeholder="{{deviceID}}" id="device"><a class="btn btn-mini changeDeviceId">save</a>
+                </div>
+                <div class='btnarea'>
+                    <span class='label'>Step 1:</span>
+                    <span class='requestAdminToken btn'>Request an Admin Token</span>
+                </div>
+                <div class='btnarea'>
+                    <span class='label'>Step 2:</span>
+                    <span class='postDocument btn'>Post Documents</span>
+                </div>
+                <div class='btnarea'>
+                    <span class='label'>Step 3:</span>
+                    <span class='requestUserToken btn'>Request a User Token</span>
+                </div>
+                <div class='btnarea'>
+                    <span class='label'>Step 4a:</span>
+                    <span class='joinSession btn'>Join default Session</span>
+                </div>
+                <div class='btnarea'>
+                    <span class='label'>Step 4b:</span>
+                    <span class='createSession btn'>Create a New Session</span>
+                </div>
+                <div class='btnarea'>
+                    <span class='label'>Step 5:</span>
+                    <span class='postTextEntry btn'>Post a New Text Entry</span>
+                </div>
+                <div class='btnarea'>
+                    <span class='label'>Step 6:</span>
+                    <span class='getDocuments btn'>Get Documents</span>
+                </div>
+                <div class='btnarea'>
+                    <span class='label'>Step 7:</span>
+                    <span class='getEntities btn'>Get Entities</span>
+                </div>
+                <div class='btnarea'>
+                    <span class='label'>Step 8:</span>
+                    <span class='pushNotify btn'>Push to Phone</span>
+                </div>
+                <!-- <div class='btnarea'>
+                    <span class='label'>Step 8:</span>
+                    <span class='publishUserEvent btn'>Publish Custom User Event</span>
+                </div>
+                <div class='btnarea'>
+                    <span class='label'>Step 9:</span>
+                    <span class='publishSessionEvent btn'>Publish Custom Session Event</span>
+                </div> -->
+            </td>
 
-  {{> hello}}
+            <td>
+                <div class='label'>STATUS LOG:</div>
+                <div id='log'></div>
+            </td>
+
+            <td>
+                <div class='label'>JSON DATA:</div>
+                <div id='json'></div>
+            </td>
+        </tr>
+    </table>
 </body>
 
 <template name="hello">
-  <button>Click Me</button>
-  <p>You've pressed the button {{counter}} times.</p>
+</template>
+
+<template name="stream">
+</template>
+
+<template name="stats">
+</template>
+
+<template name="mindmeld">
+</template>
+
+<template name="telegram">
+</template>
+
+<template name="messenger">
 </template>
