@@ -21,24 +21,24 @@ The code for the project is split into three repositories:
 ### Scenario: Talking About a Movie
 The participants in a conversation are talking about a movie. While they are unable to recall the name of the movie at that moment, they are able to describe certain details about it, such as the actors featuring in it or even if it is based on a book by a certain author. We aim to guess the movie they are talking about and provide additional information as the conversation progresses. So writing something like ***"I'm reading a book by Gillian Flynn. I think there's a movie based on it!"*** would trigger the following information overlay:
 
-![scenario_screen:movie](https://raw.githubusercontent.com/sureshs592/fb-finals-team-sg-android/master/readme%20screens/2014-11-14%2022.23.03.png =300x)
+<img src="https://raw.githubusercontent.com/sureshs592/fb-finals-team-sg-android/master/readme%20screens/2014-11-14%2022.23.03.png" width="300px"/>
 
 ### Scenario: Movie Timings
 The participants have decided on a movie that they wish to watch. Their next
 step would be trying to find the show timings for the movie in and around
 their area. Writing something like ***"What time would you suggest?"*** would prompt the following window:
 
-![scenario_screen:movie_timings](https://raw.githubusercontent.com/sureshs592/fb-finals-team-sg-android/master/readme%20screens/2014-11-18%2005.33.02.png =300x)
+<img src="https://raw.githubusercontent.com/sureshs592/fb-finals-team-sg-android/master/readme%20screens/2014-11-18%2005.33.02.png" width="300px"/>
 
 ### Scenario: Location
 As participants decide on a location, Telepathy is able to provide previews of the location on Google Maps. Typing an address or a message such as "Shall we meet at 1 Hacker Way (Facebook HQ)" would display an interactive map:
 
-![scenario_screen:location](https://raw.githubusercontent.com/sureshs592/fb-finals-team-sg-android/master/readme%20screens/2014-11-18%2005.40.46.png =300x)
+<img src="https://raw.githubusercontent.com/sureshs592/fb-finals-team-sg-android/master/readme%20screens/2014-11-18%2005.40.46.png" width="300px"/>
 
 ### Scenario: Facebook Event Attendee
 Telepathy also indexes and utilizes information from Facebook Graph. If the user met someone at an event (organised on Facebook) and was trying to recollect who that person was, writing something like "I met this guy at the hackathon yesterday. He was from Singapore" will display the following information, with an additional link to visit the Facebook profile in question:
 
-![scenario_screen:facebook](https://raw.githubusercontent.com/sureshs592/fb-finals-team-sg-android/master/readme%20screens/2014-11-18%2005.51.20.png =300x)
+<img src="https://raw.githubusercontent.com/sureshs592/fb-finals-team-sg-android/master/readme%20screens/2014-11-18%2005.51.20.png" width="300px"/>
 
 ## Backend: Server
 In the backend, we integrated with a service called [MindMeld](https://developer.expectlabs.com/) to do most of our natural language processing. A screenshot of what was going on behind the scenes in the web server:
