@@ -44,3 +44,15 @@ Telepathy also indexes and utilizes information from Facebook Graph. If the user
 In the backend, we integrated with a service called [MindMeld](https://developer.expectlabs.com/) to do most of our natural language processing. A screenshot of what was going on behind the scenes in the web server:
 
 ![server](https://raw.githubusercontent.com/sureshs592/fb-finals-team-sg-android/master/readme%20screens/server.jpg)
+
+##Stack
+- Android SDK v21
+- MeteorJS
+- MindMeld NLP API
+- 
+
+##Team
+- XU Mengxiang
+- Suresh SUBRAMANIAM
+- Alayne PANG
+- Abhilash MURTHY
