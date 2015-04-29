@@ -49,7 +49,6 @@ In the backend, we integrated with a service called [MindMeld](https://developer
 - Android SDK v21
 - MeteorJS
 - MindMeld NLP API
-- 
 
 ##Team
 - XU Mengxiang
